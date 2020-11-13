@@ -1,0 +1,11 @@
+gevent
+IPy
+requests
+pymysql
+cx_Oracle
+pymongo
+psycopg2
+pymssql
+pysmb
+paramiko
+

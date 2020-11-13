@@ -1,0 +1,30 @@
+Basic Light Package Information 
+=============================== 
+Fri Jul 24 22:41:12 MDT 2020
+Client Shared Library 64-bit - 19.8.0.0.0
+
+Windows NT Version V6.2  
+CPU                 : 4 - type 86644 physical cores
+Process Affinity    : 0x0000000000000000
+Memory (Avail/Total): Ph:9876M/16381M, Ph+PgF:12172M/18813M 
+
+
+TIMEZONE INFORMATION
+--------------------
+Operating in ORACLE_HOME environment.
+
+Small timezone file = timezone_32.dat
+Large timezone file = timezlrg_32.dat
+
+LICENSE AGREEMENT
+-----------------------------
+Your use of this copy of Oracle Instant Client software product is subject to, and may not exceed the conditions of use for which you are authorized under one of the following:
+
+(i) the license or cloud services terms that you accepted when you obtained the right to use Oracle Instant Client software; or
+(ii) the license terms that you agreed to when you placed your order with Oracle for an Oracle product containing Oracle Instant Client software; or
+(iii) the Oracle Instant Client software license terms, if any, included with the hardware that you acquired from Oracle; or
+(iv) the Oracle Technology Network License Agreement (which you acknowledge you have read and agree to) available at http://www.oracle.com/technetwork/licenses/distribution-license-152002.html; or, if (i), (ii), (iii), and or (iv) are not applicable, then,
+(v) the Oracle Free Use Terms and Conditions available at BASIC_LITE_LICENSE.
+
+Oracle's obligations with respect to your use of the Oracle Instant Client, including, without limitation, obligations to indemnify you, if any, shall only be as set forth in the specific license under which you are authorized and choose to use Oracle Instant Client.
+
