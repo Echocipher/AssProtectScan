@@ -1,15 +1,13 @@
-from gevent import monkey
-monkey.patch_all()
-import gevent
 import argparse
 import sys
 from IPy import IP
 import time
 import socket
-import argparse
 from multiprocessing.dummy import Pool as ThreadPool
 from lib.config import *
 from lib.exploit import *
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 
 class AssProtectScan(object):
     def __init__(self, target, thread,service):
@@ -91,23 +89,17 @@ class AssProtectScan(object):
                 else:
                     self.check.elasticsearch(ip)
 
-    def start(self, ip):
-        print ('{}[*] Checking... {} {}'.format(S, ip, W))
-        try:
-            gevents = []
-            for port in self.ports:
-                gevents.append(gevent.spawn(self.scan, ip, int(port)))
-            gevent.joinall(gevents)
-        except Exception as e:
-            pass
-
-
     def run(self):
-        pool = ThreadPool(processes=self.thread)
+        loop = asyncio.get_event_loop()
+        executor = ThreadPoolExecutor(self.thread)
+        tasks = []
+        for ip in self.ips:
+            print ('{}[*] Checking... {} {}'.format(S, ip, W))
+            for port in self.ports:
+                task = loop.run_in_executor(executor, self.scan, ip, int(port))
+                tasks.append(task)
         try:
-            pool.map_async(self.start, self.ips).get(0xffff)
-            pool.close()
-            pool.join()
+            loop.run_until_complete(asyncio.wait(tasks))
         except Exception as e:
             pass
         except KeyboardInterrupt:
@@ -116,6 +108,7 @@ class AssProtectScan(object):
         finally:
             print ('-'*55)
             print ('{}[+] 扫描完成耗时 {} 秒.{}'.format(O, time.time()-self.time, W) )
+
 
 def banner():
     banner = '''

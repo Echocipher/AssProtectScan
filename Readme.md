@@ -42,17 +42,16 @@ Python 3.6.0
 pip 19.2.2 from C:\Users\shmilylty\AppData\Roaming\Python\Python36\site-packages\pip (python 3.6)
 ```
 
-下面以`Kali 2020.2`为例
+开始使用
 
 ```
-sudo apt-get install python3-pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
 git clone https://github.com/Echocipher/AssProtectScan.git
 cd AssProtectScan
 pip3 install -r requirements.txt
 python3 AssProtectScan.py -h
 ```
-
-Windows(目前`py3.8`存在阻塞现象，暂未debug，`py3.7`正常)
 
 ## 使用说明
 
